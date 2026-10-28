@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="JWN — independent cybersecurity research, threat intelligence, malware analysis, and digital protection. Powered by Luminary Technicals.">
+  <title>JWN — Research. Defend. Advance.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#070b16;--panel:#0b1222;--panel2:#0d172a;--line:rgba(150,181,231,.14);--text:#eef5ff;--muted:#91a1bc;--blue:#4ea1ff;--cyan:#64e5ff;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 76% 8%,rgba(34,103,201,.16),transparent 34%),radial-gradient(ellipse at 10% 42%,rgba(26,80,151,.11),transparent 36%),linear-gradient(rgba(104,149,211,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(104,149,211,.035) 1px,transparent 1px);background-size:auto,auto,52px 52px,52px 52px}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.23;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E")}
+    a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.mono,.eyebrow,.nav-link,.status,.tag{font-family:"DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+    .topline{height:3px;background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),transparent)}header{position:sticky;top:0;z-index:20;background:rgba(7,11,22,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.15em;font-size:1.15rem}.brand-mark{width:37px;height:37px;border:1px solid rgba(100,229,255,.6);display:grid;place-items:center;position:relative;color:var(--cyan);font-family:"DM Mono",monospace;font-size:.9rem;box-shadow:inset 0 0 18px rgba(78,161,255,.12),0 0 22px rgba(78,161,255,.08)}.brand-mark:after{content:"";position:absolute;inset:4px;border:1px solid rgba(78,161,255,.25)}.brand small{display:block;font-size:.58rem;color:var(--muted);font-weight:400;letter-spacing:.12em;margin-top:-3px}
+    .nav-links{display:flex;align-items:center;gap:30px}.nav-link{font-size:.72rem;color:#b9c7dd;transition:color .2s}.nav-link:hover{color:var(--cyan)}.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(100,229,255,.4);padding:12px 17px;font-family:"DM Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:#eafaff;background:rgba(36,104,181,.12);transition:background .2s,border-color .2s,transform .2s}.nav-cta:hover,.button:hover{background:rgba(36,134,230,.22);border-color:var(--cyan);transform:translateY(-1px)}.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px}
+    .hero{padding:112px 0 94px;position:relative}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:56px}.eyebrow{font-size:.72rem;color:var(--cyan);display:flex;align-items:center;gap:11px}.eyebrow:before{content:"";width:25px;height:1px;background:var(--cyan)}h1{font-size:clamp(3rem,6.5vw,5.9rem);line-height:1.01;letter-spacing:-.065em;margin:25px 0 24px;font-weight:800;max-width:760px}h1 span{background:linear-gradient(105deg,#e8f5ff 8%,#8ac5ff 48%,#64e5ff 92%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{max-width:610px;color:#a7b6ce;font-size:1.06rem;line-height:1.85}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}.button.primary{background:linear-gradient(110deg,#176bc4,#164a91);border-color:#58b4ff}.button.secondary{background:transparent;border-color:var(--line);color:#bdcbe0}.micro-note{margin-top:24px;color:#6f829f;font: .68rem "DM Mono",monospace;letter-spacing:.04em}
+    .orbital{min-height:360px;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:1px solid rgba(89,165,255,.25);border-radius:50%;transform:rotate(-25deg)}.orbit.one{width:320px;height:180px}.orbit.two{width:390px;height:230px;transform:rotate(38deg);border-color:rgba(100,229,255,.19)}.orbit.three{width:270px;height:270px;border-color:rgba(89,165,255,.12)}.core{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#214c83,#0b1830 58%,#070b16 76%);border:1px solid rgba(100,229,255,.5);box-shadow:0 0 55px rgba(49,143,255,.25),inset 0 0 35px rgba(74,169,255,.22);font:1.55rem "DM Mono",monospace;letter-spacing:.12em;color:#d9f8ff}.core:after{content:"";position:absolute;width:104px;height:104px;border:1px solid rgba(100,229,255,.18);border-radius:50%}.node{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}.node.n1{top:55px;left:23%}.node.n2{right:10%;top:48%}.node.n3{bottom:54px;left:29%}.telemetry{position:absolute;right:-5px;bottom:3px;border:1px solid var(--line);background:rgba(7,11,22,.85);padding:13px 16px;min-width:190px}.telemetry .label{color:#7086a8;font: .62rem "DM Mono",monospace;letter-spacing:.1em}.telemetry strong{display:block;color:#c6f8ff;font: .85rem "DM Mono",monospace;margin-top:5px}.pulse{display:inline-block;width:6px;height:6px;background:#58efc1;border-radius:50%;margin-right:7px;box-shadow:0 0 10px #58efc1}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,20,38,.6)}.ticker-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:19px 0;color:#8295b2;font: .68rem "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}.ticker b{color:#c1d7f3;font-weight:400}
+    section{padding:104px 0}.section-head{max-width:720px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.05em;line-height:1.12;margin:16px 0}.section-head p{color:var(--muted);max-width:620px}.section-kicker{color:var(--cyan);font: .7rem "DM Mono",monospace;letter-spacing:.12em;text-transform:uppercase}.mission-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.mission-quote{font-size:clamp(1.55rem,2.5vw,2.2rem);line-height:1.35;letter-spacing:-.04em;margin:0}.mission-quote em{font-style:normal;color:var(--cyan)}.mission-text{color:var(--muted);margin-top:0}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}.principle{border-left:1px solid rgba(100,229,255,.45);padding:7px 0 7px 16px}.principle strong{display:block;font-size:.9rem}.principle span{display:block;color:#7f91ad;font-size:.78rem;margin-top:5px}
+    .research{background:linear-gradient(180deg,rgba(11,19,36,.35),rgba(11,19,36,.75));border-top:1px solid rgba(150,181,231,.08);border-bottom:1px solid rgba(150,181,231,.08)}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{position:relative;min-height:230px;padding:28px;border:1px solid var(--line);background:linear-gradient(140deg,rgba(15,29,52,.88),rgba(8,14,27,.86));transition:border-color .25s,transform .25s;overflow:hidden}.card:hover{border-color:rgba(100,229,255,.45);transform:translateY(-3px)}.card:after{content:"";position:absolute;width:160px;height:160px;right:-80px;bottom:-100px;border:1px solid rgba(78,161,255,.16);border-radius:50%;box-shadow:0 0 0 18px rgba(78,161,255,.025),0 0 0 36px rgba(78,161,255,.02)}.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}.card-icon{width:42px;height:42px;border:1px solid rgba(100,229,255,.3);display:grid;place-items:center;color:var(--cyan);background:rgba(50,119,199,.1)}.card-num{color:#536c91;font: .7rem "DM Mono",monospace}.card h3{margin:0 0 9px;font-size:1.12rem}.card p{margin:0;color:#8d9fba;font-size:.87rem;max-width:450px}.tag{display:inline-block;color:#7ea8d9;font-size:.58rem;margin-top:20px}
+    .protocol-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.protocol-panel{border:1px solid var(--line);background:rgba(10,19,35,.72);padding:28px}.terminal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:18px;color:#8295b2;font: .65rem "DM Mono",monospace;letter-spacing:.06em}.terminal-dots{display:flex;gap:5px}.terminal-dots i{width:6px;height:6px;border-radius:50%;background:#345171}.terminal-line{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid rgba(150,181,231,.07);font:.78rem "DM Mono",monospace}.terminal-line:last-child{border-bottom:0}.terminal-line .num{color:#4c6689}.terminal-line .ok{color:#63e4c0}.terminal-line .value{color:#b8c9e1}.protocol-copy h2{font-size:clamp(2rem,3.8vw,3rem);letter-spacing:-.05em;line-height:1.15;margin:15px 0 20px}.protocol-copy p{color:var(--muted)}.checks{list-style:none;padding:0;margin:26px 0 0}.checks li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;color:#bdcbe0;font-size:.88rem}.checks li:before{content:"+";font-family:"DM Mono",monospace;color:var(--cyan)}
+    .contact{padding-top:50px}.contact-box{position:relative;overflow:hidden;border:1px solid rgba(100,229,255,.25);background:radial-gradient(ellipse at 80% 0%,rgba(31,100,190,.2),transparent 45%),linear-gradient(135deg,#0b1629,#080e1b);padding:clamp(30px,6vw,70px);display:flex;align-items:center;justify-content:space-between;gap:30px}.contact-box h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;letter-spacing:-.05em;margin:15px 0}.contact-box p{color:var(--muted);max-width:560px;margin-bottom:0}.contact-box:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(100,229,255,.1);border-radius:50%;right:15%;top:-220px;box-shadow:0 0 0 30px rgba(100,229,255,.025),0 0 0 60px rgba(100,229,255,.02);pointer-events:none}.contact-box>*{position:relative;z-index:1}
+    footer{margin-top:80px;border-top:1px solid var(--line);padding:26px 0 35px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-brand{font-weight:800;letter-spacing:.14em;font-size:.85rem}.footer-brand span{display:block;color:#6d809f;font: .62rem "DM Mono",monospace;letter-spacing:.04em;margin-top:4px}.footer-meta{color:#70819c;font: .65rem "DM Mono",monospace;letter-spacing:.03em}.footer-links{display:flex;gap:20px;color:#9aabc4;font-size:.76rem}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:translateY(0)}:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    @media(max-width:850px){.nav-links{gap:16px}.nav-link{font-size:.65rem}.hero-grid{grid-template-columns:1fr;gap:18px}.hero{padding-top:82px}.orbital{min-height:300px;max-width:500px;width:100%;margin:auto}.mission-grid,.protocol-grid{grid-template-columns:1fr;gap:30px}.mission-grid{gap:22px}.contact-box{align-items:flex-start;flex-direction:column}.principles{gap:12px}}
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 34px))}.nav{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:22px 24px 26px;background:rgba(7,11,22,.98);border-bottom:1px solid var(--line);align-items:flex-start;flex-direction:column;gap:20px}.nav-links.open{display:flex}.nav-cta{width:100%;justify-content:center}.hero{padding:66px 0 64px}h1{font-size:clamp(2.8rem,13vw,4.3rem)}.hero-copy{font-size:.96rem}.orbital{min-height:260px;transform:scale(.9);margin:-5px auto}.orbit.one{width:270px;height:150px}.orbit.two{width:320px;height:190px}.orbit.three{width:220px;height:220px}.core{width:108px;height:108px}.core:after{width:86px;height:86px}.telemetry{right:0;bottom:-6px;min-width:160px;padding:10px 12px}.ticker-inner{justify-content:flex-start;gap:14px 22px;font-size:.59rem}section{padding:75px 0}.cards{grid-template-columns:1fr}.card{min-height:200px;padding:23px}.principles{grid-template-columns:1fr}.protocol-panel{padding:18px}.terminal-line{font-size:.68rem;gap:10px}.contact{padding-top:15px}.contact-box{padding:28px 23px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="JWN home"><span class="brand-mark">JWN</span><span>JWN<small>JAMES WEB NETWORKING</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#mission">Mission</a><a class="nav-link" href="#research">Research</a><a class="nav-link" href="#protocol">Principles</a>
+        <a class="nav-cta" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Independent cybersecurity research</div>
+          <h1>Understand the threat.<br><span>Engineer the defense.</span></h1>
+          <p class="hero-copy">JWN explores the evolving digital threat landscape through security research, threat intelligence, malware analysis, and practical digital protection—turning technical insight into stronger defenses.</p>
+          <div class="hero-actions"><a class="button primary" href="#research">Explore our focus <span aria-hidden="true">↘</span></a><a class="button secondary" href="#mission">Our mission <span aria-hidden="true">→</span></a></div>
+          <div class="micro-note">RESEARCH WITH PURPOSE · SECURITY BY DESIGN · RESPONSIBILITY ALWAYS</div>
+        </div>
+        <div class="orbital" aria-label="Abstract orbital cybersecurity graphic">
+          <div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span>
+          <div class="core">JWN</div>
+          <div class="telemetry"><div class="label">RESEARCH STATUS</div><strong><span class="pulse"></span>DEFENSE IN PROGRESS</strong></div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker"><div class="wrap ticker-inner"><span><b>01</b> Threat intelligence</span><span><b>02</b> Malware research</span><span><b>03</b> Digital protection</span><span><b>04</b> Authorized testing</span></div></div>
+    <section id="mission">
+      <div class="wrap mission-grid reveal">
+        <div><div class="section-kicker">01 / The mission</div><p class="mission-quote">A safer digital world begins with <em>understanding what can go wrong</em>—and building what makes it right.</p></div>
+        <div><p class="mission-text">JWN (James Web Networking) is a cybersecurity research initiative focused on understanding threats, strengthening systems, and helping people navigate a complex digital environment. We bring a research-led mindset to emerging risks and defensive technology.</p><p class="mission-text">Our work is grounded in curiosity, technical rigor, and respect for the systems and people we aim to protect. We believe useful security research should produce clearer insight, safer tools, and resilient digital infrastructure.</p>
+          <div class="principles"><div class="principle"><strong>Defense first</strong><span>Build for resilience and protection.</span></div><div class="principle"><strong>Permission always</strong><span>Test only within clear authorization.</span></div><div class="principle"><strong>Responsible research</strong><span>Handle findings with care.</span></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="research" id="research">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="section-kicker">02 / Areas of focus</div><h2>Research built for the<br>real-world threat landscape.</h2><p>From studying suspicious behavior to improving security posture, our focus connects technical exploration with practical, defensive outcomes.</p></div>
+        <div class="cards">
+          <article class="card reveal"><div class="card-top"><div class="card-icon" aria-hidden="true">⌁</div><span class="card-num">R / 01</span></div><h3>Threat intelligence</h3><p>Track patterns, examine indicators, and translate emerging threat activity into actionable defensive context.</p><span class="tag">ANALYZE · CONTEXTUALIZE</span></article>
+          <article class="card reveal"><div class="card-top"><div class="card-icon" aria-hidden="true">⟁</div><span class="card-num">R / 02</span></div><h3>Malware analysis</h3><p>Study suspicious files and behaviors in controlled environments to improve understanding, detection, and response.</p><span class="tag">ISOLATE · UNDERSTAND</span></article>
+          <article class="card reveal"><div class="card-top"><div class="card-icon" aria-hidden="true">⌘</div><span class="card-num">R / 03</span></div><h3>Digital protection</h3><p>Explore practical tools, secure configurations, and defensive workflows that help reduce everyday digital risk.</p><span class="tag">HARDEN · PROTECT</span></article>
+          <article class="card reveal"><div class="card-top"><div class="card-icon" aria-hidden="true">⟠</div><span class="card-num">R / 04</span></div><h3>Authorized security testing</h3><p>Assess systems within a defined scope and with explicit permission to uncover weaknesses before they are abused.</p><span class="tag">VERIFY · IMPROVE</span></article>
+        </div>
+      </div>
+    </section>
+    <section id="protocol">
+      <div class="wrap protocol-grid">
+        <div class="protocol-panel reveal" aria-label="JWN research principles">
+          <div class="terminal-head"><span>JWN / RESEARCH_PROTOCOL</span><span class="terminal-dots"><i></i><i></i><i></i></span></div>
+          <div class="terminal-line"><span class="num">01</span><span class="ok">SCOPE_CHECK</span><span class="value">authorization required</span></div>
+          <div class="terminal-line"><span class="num">02</span><span class="ok">ENVIRONMENT</span><span class="value">controlled & isolated</span></div>
+          <div class="terminal-line"><span class="num">03</span><span class="ok">OBJECTIVE</span><span class="value">defensive outcome</span></div>
+          <div class="terminal-line"><span class="num">04</span><span class="ok">DISCLOSURE</span><span class="value">responsible handling</span></div>
+          <div class="terminal-line"><span class="num">05</span><span class="ok">REVIEW</span><span class="value">document & improve</span></div>
+        </div>
+        <div class="protocol-copy reveal"><div class="section-kicker">03 / How we work</div><h2>Curiosity needs a code.</h2><p>Cybersecurity research is most valuable when it is careful, transparent, and tied to a legitimate purpose. Our operating principles keep exploration aligned with safety and trust.</p><ul class="checks"><li>Test only systems you own or are explicitly authorized to assess.</li><li>Use isolated environments when examining suspicious artifacts.</li><li>Prioritize defensive use, privacy, and harm reduction.</li><li>Document findings clearly and handle disclosures responsibly.</li></ul></div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="wrap"><div class="contact-box reveal"><div><div class="section-kicker">04 / Connect with JWN</div><h2>Better security starts<br>with a conversation.</h2><p>Have a research question, a defensive project, or an idea for collaboration? Get in touch to discuss responsible, security-focused work.</p></div><a class="button primary" href="mailto:contact@jwn.qzz.io">Contact JWN <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div class="footer-brand">JWN<span>JAMES WEB NETWORKING · POWERED BY LUMINARY TECHNICALS</span></div><div class="footer-meta">INDEPENDENT RESEARCH · RESPONSIBLE BY DESIGN<br>© <span id="year"></span> JWN. ALL RIGHTS RESERVED.</div><div class="footer-links"><a href="#mission">Mission</a><a href="#research">Research</a><a href="#contact">Contact</a></div></div></footer>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => { const open = links.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); toggle.textContent = open ? '✕' : '☰'; });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open navigation'); toggle.textContent = '☰'; }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
