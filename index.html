@@ -7,6 +7,7 @@
   <meta name="description" content="James Web Networking (JWN) explores cybersecurity, threat intelligence, malware analysis and digital defense. Powered by Luminary Technicals.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://jwn.qzz.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="James Web Networking">
   <meta property="og:title" content="James Web Networking (JWN) | Cybersecurity Research">
@@ -90,7 +91,7 @@
   <header>
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="JWN home"><span class="brand-mark">JWN</span><span>JWN<small>JAMES WEB NETWORKING</small></span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
       <div class="nav-links" id="navLinks">
         <a class="nav-link" href="#mission">Mission</a><a class="nav-link" href="#research">Research</a><a class="nav-link" href="#protocol">Principles</a><a class="nav-link" href="jset.html">JSET Research</a>
         <a class="nav-cta" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
@@ -155,10 +156,32 @@
   <script>
     const toggle = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => { const open = links.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); toggle.textContent = open ? '✕' : '☰'; });
-    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Open navigation'); toggle.textContent = '☰'; }));
+    const closeNavigation = () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+      toggle.textContent = '☰';
+    };
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNavigation));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && links.classList.contains('open')) {
+        closeNavigation();
+        toggle.focus();
+      }
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold: 0.12});
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    }), {threshold: 0.12});
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
