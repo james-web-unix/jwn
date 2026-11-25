@@ -1,0 +1,17 @@
+{
+  "id": "/",
+  "name": "James Web Networking",
+  "short_name": "JWN",
+  "description": "Cybersecurity research, threat intelligence and digital defense — powered by Luminary Technicals.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#070b16",
+  "theme_color": "#070b16",
+  "categories": ["education", "security", "technology"],
+  "icons": [
+    {"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"},
+    {"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable"}
+  ]
+}
